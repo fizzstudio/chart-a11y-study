@@ -1,0 +1,25 @@
+{
+  "name": "chart-a11y-study",
+  "authors": [
+    "Frank Elavsky",
+    "Doug Schepers"
+  ],
+  "version": "0.0.2",
+  "keywords": [
+    "visualization",
+    "accessibility"
+  ],
+  "description": "A study for chart accesibility. This is a repository for experimental environments to test assistive technology user experience with complex static and interactive charts and graphs.",
+  "engines": {
+    "npm": "^6.14.16",
+    "node": "^18.11.0"
+  },
+  "scripts": {
+    "prettier-all-check": "prettier --config  ./.prettierrc --ignore ./.prettierignore --debug-check \"**/*.{js,jsx,ts,tsx,html,jsx,json,css,scss,md}\"",
+    "prettier-all": "prettier --config  ./.prettierrc --ignore ./.prettierignore --write \"**/*.{js,jsx,ts,tsx,html,jsx,json,css,scss,md}\""
+  },
+  "dependencies": {
+    "@visa/charts": "^6.1.0",
+    "prettier": "^2.6.2"
+  }
+}

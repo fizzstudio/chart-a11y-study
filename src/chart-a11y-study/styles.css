@@ -1,0 +1,69 @@
+
+  body {
+    margin: 0 auto;
+    max-width: 60em;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-rendering: optimizeLegibility;
+    font-kerning: normal;
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  
+  main {
+    float: left;
+    max-width: 75%;
+    padding-left: 25px;
+  }
+  
+  header {
+    top: 1.4em;
+    float: left;
+    max-width: 25%;
+    border-right: 1px solid #949494;
+    position: sticky;
+    align-self: start;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding-right: 25px;
+  }
+  
+  body:after {
+    content: '.';
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+  .heat-map-dataLabel {
+    pointer-events: none;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+.clustered-chart-annotation .connector {
+  stroke: #972800;
+}
+
+.clustered-chart-annotation .annotation-note-bg {
+  fill-opacity: 1;
+  fill: white;
+}
+
+.clustered-chart-annotation .annotation-note-label,
+.clustered-chart-annotation .annotation-note-title {
+  fill: #972800;
+}
+
+clustered-bar-chart .annotations {
+  pointer-events: none;
+}
