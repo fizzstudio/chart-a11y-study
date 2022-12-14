@@ -1,11 +1,14 @@
 const histogramProps = {
   chartType: 'bar-chart',
+  uniqueID: "histogram",
+  selectionLabel: "Fourth Chart",
 	accessibility: {
+    elementDescriptionAccessor: 'Note',
+    elementsAreInterface: true,
 		"includeDataKeyNames": true,
 		"contextExplanation": "This example of a histogram was selected through example list on the sidebar.",
 		"structureNotes": "This histogram shows the distribution of heights (in cm) for 30 people.",
 		"purpose": "This histogram shows the distribution of heights (in cm) for 30 people.",
-		"elementsAreInterface": true,
 		"disableValidation": true
 	},
 	xAxis: {
@@ -26,32 +29,28 @@ const histogramProps = {
 		{
 			"height": "139.5 to 149.5",
 			"value": 6,
-			// "region": "Region 1"
 		},
 		{
 			"height": "149.5 to 159.5",
-			"value": 9,
-			// "region": "Region 1"
+			"value": 9, 
+      Note: 'Highest Value',
 		},
 		{
 			"height": "159.5 to 169.5",
 			"value": 7,
-			// "region": "Region 2"
 		},
 		{
 			"height": "169.5 to 179.5",
 			"value": 5,
-			// "region": "Region 2"
 		},
 		{
 			"height": "179.5 to 189.5",
 			"value": 3,
-			// "region": "Region 1"
 		},
 		{
 			"height": "189.5 to 199.5",
 			"value": 1,
-			// "region": "Region 1"
+      Note: 'Lowest Value',
 		}
 	],
 	ordinalAccessor: "height",
@@ -59,12 +58,10 @@ const histogramProps = {
 	// groupAccessor: "region",
 	tooltipLabel: {
 		"labelAccessor": [
-			// "region",
 			"height",
 			"value"
 		],
 		"labelTitle": [
-			// "Region",
 			"Height",
 			"Amount"
 		],
@@ -86,13 +83,9 @@ const histogramProps = {
 		"visible": false,
 		"interactive": false
 	},
-	colorPalette: "categorical",
-	referenceStyle: {
-		"color": "categorical_blue",
-		"strokeWidth": "1px",
-		"opacity": 0.8,
-		"dashed": "3 2"
-	},
+  colors: [
+		"grey"
+	],
 	dataLabel: {
 		"visible": true,
 		"placement": "right",
@@ -123,6 +116,4 @@ const histogramProps = {
 	],
   height: 430,
   width: 800,
-	uniqueID: "histogram",
-  selectionLabel: "Fourth Chart",
 }

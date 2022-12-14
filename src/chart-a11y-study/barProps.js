@@ -1,4 +1,13 @@
 const barProps = {
+  uniqueID: 'bar-chart',
+  selectionLabel: "First Chart",
+  accessibility: {
+    elementDescriptionAccessor: 'Note',
+    executiveSummary: 'Product Paper is the Highest Value, Envelopes is the Lowest.',
+    statisticalNotes: 'Chart is unsorted.',
+    elementsAreInterface: true,
+    disableValidation: true
+  },
   mainTitle: `Products in all Regions, 2020`,
   subTitle:
     'This chart shows all products sales across every region. Values are in millions of dollars.',
@@ -6,9 +15,9 @@ const barProps = {
     { Product: 'Chairs', Region: 'West', Value: 8 },
     { Product: 'Notepads', Region: 'South', Value: 16 },
     { Product: 'Pens', Region: 'Northeast', Value: 15 },
-    { Product: 'Paper', Region: 'South', Value: 28 },
-    { Product: 'Envelopes', Region: 'West', Value: 7 },
+    { Product: 'Paper', Region: 'South', Value: 28, Note: 'Highest Value' },
     { Product: 'Labels', Region: 'Non-contiguous', Value: 8 },
+    { Product: 'Envelopes', Region: 'West', Value: 7, Note: 'Lowest Value' },
     { Product: 'Binders', Region: 'Midwest', Value: 14 },
     { Product: 'Art', Region: 'Northeast', Value: 15 },
     { Product: 'Fasteners', Region: 'West', Value: 22 },
@@ -28,12 +37,4 @@ const barProps = {
   yAxis: { visible: false, gridVisible: false },
   xAxis: { label: '', visible: true },
   sortOrder: '',
-  accessibility: {
-    elementDescriptionAccessor: 'Note',
-    executiveSummary: 'Product Paper is the Highest Value, Envelopes is the Lowest.',
-    statisticalNotes: 'Chart is unsorted.',
-    disableValidation: true
-  },
-  uniqueID: 'bar-chart',
-  selectionLabel: "First Chart",
 }

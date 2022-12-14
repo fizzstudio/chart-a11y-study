@@ -1,41 +1,46 @@
 const pieProps = {
+  uniqueID: "pie-chart",
+  selectionLabel: "Third Chart",
 	accessibility: {
+    elementDescriptionAccessor: 'Note',
+    elementsAreInterface: true,
 		"includeDataKeyNames": true,
 		"contextExplanation": "This example of a pie chart was selected through example list on the sidebar.",
 		"purpose": "Pie chart depicting share of total across key categories.",
 		"structureNotes": "A different color and pattern is used to represent each category.",
 		"statisticalNotes": "This chart is using dummy data. The spread of share is relatively even across the groups.",
-		"elementsAreInterface": false,
 		"disableValidation": true
 	},
 	centerTitle: "Share",
 	centerSubTitle: "of Market",
-	mainTitle: "Group share of market",
+	mainTitle: "Company share of market",
 	data: [
 		{
-			"label": "Group A",
+			"label": "Company A",
 			"value": 43000,
 			"location": "US"
 		},
 		{
-			"label": "Group C",
+			"label": "Company C",
 			"value": 32000,
-			"location": "US"
+			"location": "Mexico"
 		},
 		{
-			"label": "Group D",
+			"label": "Company D",
 			"value": 25000,
-			"location": "US"
+			"location": "US",
+      "Note": "Lowest value."
 		},
 		{
-			"label": "Group B",
+			"label": "Company B",
 			"value": 52000,
-			"location": "Region 4"
+			"location": "Canada",
+      "Note": "Highest value."
 		},
 		{
-			"label": "Group E",
+			"label": "Company E",
 			"value": 31000,
-			"location": "Region 4"
+			"location": "US"
 		}
 	],
 	dataLabel: {
@@ -78,6 +83,4 @@ const pieProps = {
 	},
 	sortOrder: "default",
 	cursor: "pointer",
-	uniqueID: "pie-chart",
-  selectionLabel: "Third Chart",
 }
