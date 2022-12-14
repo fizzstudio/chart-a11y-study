@@ -9,109 +9,6 @@
 
   </head>
   <body>
-    <!-- 
-    <header>
-      <nav>
-        <h2>Environments</h2>
-        <p>Load chart only once ready to evaluate:</p>
-        <input type="radio" id="c1" name="chart" value="First" class="input-selector" />
-        <label for="c1">First Chart</label><br />
-        <input type="radio" id="c2" name="chart" value="Second" class="input-selector" />
-        <label for="c2">Second Chart</label><br />
-        <input type="radio" id="c3" name="chart" value="Third" class="input-selector" />
-        <label for="c3">Third Chart</label><br />
-        <input type="radio" id="c4" name="chart" value="Fourth" class="input-selector" />
-        <label for="c4">Fourth Chart</label><br />
-        <input type="radio" id="c5" name="chart" value="Fifth" class="input-selector" />
-        <label for="c5">Fifth Chart</label><br />
-      </nav>
-    </header>
-    <main>
-      <h1>Fizz Studio: Assessing Chart Interactivity</h1>
-      <p>
-        This small test environment is intended to be used to help evaluate access barriers in online, interactive
-        charts and graphs. We are evaluating a series of interactive charts and graphs with various assistive
-        technologies and native users.
-      </p>
-      <p>
-        These environments are set up so that participants can help us evaluate the usability of these charts and
-        graphs, they are not intended to test the individual abilities of our participants.
-      </p>
-      <p>
-        The following section is where our test chart will render. These tests may be changed by choosing an option in
-        the previous Environments nav menu.
-      </p>
-      <p>When we are ready to begin evaluating, please select First Chart in the previous Environments menu.</p>
-      <div id="chart1" class="hidden environment">
-        <div class="environment-instructions">
-          <h2>Tasks:</h2>
-          <ol>
-            <li>Which month had the highest total sign-ups?</li>
-            <li>What product had the lowest number of sign-ups on any given month and what was the month?</li>
-            <li>What product had the highest number of sign-ups on any given month and what was the month?</li>
-          </ol>
-        </div>
-        <div class="insert"></div>
-      </div>
-      <div id="chart2" class="hidden environment">
-        <div class="environment-instructions">
-          <h2>Tasks:</h2>
-          <ol>
-            <li>What is the trend of each line?</li>
-            <li>At what month did one line overtake the other?</li>
-          </ol>
-        </div>
-        <div class="insert"></div>
-      </div>
-      <div id="chart3" class="hidden environment">
-        <div class="environment-instructions">
-          <h2>Tasks:</h2>
-          <ol>
-            <li>Which product had the highest and lowest value in the Northeast Region in 2020?</li>
-            <li>Which product had the highest and lowest value in the Northeast Region in 2016?</li>
-          </ol>
-          <div>
-            <h3>Select a year:</h3>
-            <input type="radio" id="y13" name="year3" value="2020" class="year-selector" checked />
-            <label for="y13">2020</label><br />
-            <input type="radio" id="y23" name="year3" value="2016" class="year-selector" />
-            <label for="y23">2016</label>
-          </div>
-        </div>
-        <div class="insert"></div>
-      </div>
-      <div id="chart4" class="hidden environment">
-        <div class="environment-instructions">
-          <h2>Tasks:</h2>
-          <ol>
-            <li>Select the cell with the highest value.</li>
-            <li>What does the information say under the chart after the highest value has been selected?</li>
-          </ol>
-        </div>
-        <div class="insert"></div>
-        <div class="announcement">
-          <h2>Data Output Area</h2>
-          <p>When a selection has been made in the heatmap, it will be recorded here:</p>
-          <span id="aria-live" aria-live="polite">No selection has been made.</span>
-        </div>
-      </div>
-      <div id="chart5" class="hidden environment">
-        <div class="environment-instructions">
-          <h2>Tasks:</h2>
-          <ol>
-            <li>What is the direction of the trend that is mentioned in the executive report below?</li>
-          </ol>
-        </div>
-        <br />
-        <h2>Executive report:</h2>
-        <p>
-          With the current sales trends <span id="line-insert" class="insert"></span> it may make sense to reconsider
-          our priorities for next quarter
-        </p>
-      </div>
-    </main>
- -->
-
     <style id="flexible-style"></style>
     <header>
       <nav>
@@ -142,9 +39,9 @@
           <div class="environment-instructions">
             <h2>Tasks:</h2>
             <ol>
-              <li>Which month had the highest total sign-ups?</li>
-              <li>What product had the lowest number of sign-ups on any given month and what was the month?</li>
-              <li>What product had the highest number of sign-ups on any given month and what was the month?</li>
+              <li>Which product had the lowest sales, and what was the value?</li>
+              <li>Which product had the highest sales, and what region was that in?</li>
+              <li>What is the range between the highest sales and the lowest sales?</li>
             </ol>
           </div>
           <div id="bar-chart-container" class="insert"></div>
@@ -154,6 +51,7 @@
           <div class="environment-instructions">
             <h2>Tasks:</h2>
             <ol>
+              <li>What is the highest value in both lines?</li>
               <li>What is the trend of each line?</li>
               <li>At what month did one line overtake the other?</li>
             </ol>
@@ -165,8 +63,9 @@
           <div class="environment-instructions">
             <h2>Tasks:</h2>
             <ol>
-              <li>What is the trend of each line?</li>
-              <li>At what month did one line overtake the other?</li>
+              <li>What type of chart is this? What does it show?</li>
+              <li>What is the company with the lowest value?</li>
+              <li>What is the total market share in dollars of all companies based in Mexico?</li>
             </ol>
           </div>
           <div id="pie-chart-container" class="insert"></div>
@@ -176,9 +75,26 @@
           <div class="environment-instructions">
             <h2>Tasks:</h2>
             <ol>
-              <li>What is the trend of each line?</li>
-              <li>At what month did one line overtake the other?</li>
+              <li>How many people have heights between 159.5 and 169.5 centimeters ?</li>
+              <li>How many people have heights less than 159.5 centimeters ?</li>
+              <li>How many people are in the most common range of heights, and what is that range?</li>
             </ol>
+<!-- 
+The histogram below shows the heights (in centimeters ) distribution of 30 people.
+a) How many people have heights between 159.5 and 169.5 cm?
+b) How many people have heights less than 159.5 cm?
+c) How many people have heights more than 169.5 cm?
+d) What percentage of people have heights between 149.5 and 179.5 cm?
+
+a) 7 people
+b) 9 + 6 = 15 people
+c) 5 + 2 + 1 = 8 people
+d) (9 + 7 + 5)/30 = 0.7 = 70%  
+
+TODO: let users select multiple data points and get statistical details, like total numbers
+- then let them store those results and compare them against another set of selections
+-->
+
           </div>
           <div id="histogram-container" class="insert"></div>
         </div>
@@ -188,8 +104,9 @@
           <div class="environment-instructions">
             <h2>Tasks:</h2>
             <ol>
-              <li>What is the trend of each line?</li>
-              <li>At what month did one line overtake the other?</li>
+              <li>What type of chart is this? What does it show?</li>
+              <li>How many absences did the student with the highest GPA have?</li>
+              <li>Is there a positive or negative correlation between the number of absences of a student and their GPA?</li>
             </ol>
           </div>
           <div id="scatter-plot-container" class="insert"></div>
@@ -199,8 +116,9 @@
           <div class="environment-instructions">
             <h2>Tasks:</h2>
             <ol>
-              <li>Select the cell with the highest value.</li>
-              <li>What does the information say under the chart after the highest value has been selected?</li>
+              <li>What kind of chart is this?</li>
+              <li>How many regions are there, and how many cells in each region?</li>
+              <li>Select the cell with the highest value. What are the details of this cell?</li>
             </ol>
           </div>
           <div id="heat-map-container" class="insert"></div>
@@ -210,8 +128,9 @@
           <div class="environment-instructions">
             <h2>Tasks:</h2>
             <ol>
-              <li>Select the cell with the highest value.</li>
-              <li>What does the information say under the chart after the highest value has been selected?</li>
+              <li>Find the secondary course with the most students. What is the subject?</li>
+              <li>Which secondary course is most popular after studying science?</li>
+              <li>Can you identify any secondary course attended by both English and Science students?</li>
             </ol>
           </div>
           <div id="alluvial-diagram-container" class="insert"></div>
@@ -221,7 +140,7 @@
       <div class="announcement">
         <h3>Data Output Area</h3>
         <p>When a selection has been made in the chart, it will be recorded here:</p>
-        <span id="aria-live" aria-live="polite">No selection has been made.</span>
+        <span id="aria-live" aria-live="assertive" aria-atomic="true"></span>
       </div>
 
     </main>

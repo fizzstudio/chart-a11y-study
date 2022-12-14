@@ -18,32 +18,47 @@ const sparklineFix = (d) => {
     circle.setAttribute('aria-hidden', 'true')
   })
 }
-const heatClick = d => {
-  d.target.clickHighlight =
-    d.target.clickHighlight && d.target.clickHighlight[0] === d.detail.data ? [] : [d.detail.data];
-  document.getElementById('aria-live').innerHTML = !d.target.clickHighlight.length
+
+const heatClick = event => {
+  event.target.clickHighlight =
+    event.target.clickHighlight && event.target.clickHighlight[0] === event.detail.data ? [] : [event.detail.data];
+  document.getElementById('aria-live').innerHTML = !event.target.clickHighlight.length
     ? 'Selected data has been removed.'
-    : d.detail.data.Value > 0.95
+    : event.detail.data.Value > 0.95
       ? 'Highest approval correlation has been selected.'
-      : `${d.detail.data.Note} has been selected.`;
+      : `${event.detail.data.Note} has been selected.`;
 };
 
-const genericClick = d => {
-  const clickArray = [...(d.target.clickHighlight || [])]
-  const i = clickArray.indexOf(d.detail.data)
-  if (i < 0) {
-    clickArray.push(d.detail.data)
-  } else {
-    clickArray.splice(i, 1)
+const genericClick = event => {
+  document.getElementById('aria-live').textContent = ' ';
+
+  const dataDetail = event.detail.data;
+  console.log(dataDetail);
+  const memo = dataDetail.Memo;
+  if (memo) {
+    setTimeout(() => {
+      document.getElementById('aria-live').textContent = memo;
+    }, 300);
   }
-  d.target.clickHighlight = clickArray
-  document.getElementById('aria-live').innerHTML = `${clickArray.length} clicked item${clickArray.length !== 1 ? 's' : ''}.`
+
+  // const clickArray = [...(event.target.clickHighlight || [])]
+  // const i = clickArray.indexOf(event.detail.data)
+  // if (i < 0) {
+  //   clickArray.push(event.detail.data);
+  //   console.log('genericClick', event.detail.data);
+  // } else {
+  //   clickArray.splice(i, 1)
+  // }
+  // event.target.clickHighlight = clickArray
+  // document.getElementById('aria-live').innerHTML = `${clickArray.length} clicked item${clickArray.length !== 1 ? 's' : ''}.`
 };
-const genericHover = d => {
-  d.target.hoverHighlight = d.detail.data;
+
+const genericHover = event => {
+  event.target.hoverHighlight = event.detail.data;
 };
-const genericMouseOut = d => {
-  d.target.hoverHighlight = '';
+
+const genericMouseOut = event => {
+  event.target.hoverHighlight = '';
 };
 
 const chartTypes = {
@@ -62,24 +77,49 @@ const events = {
     hoverEvent: genericHover,
     mouseOutEvent: genericMouseOut
   },
+  'line-chart': {
+    clickEvent: genericClick,
+    hoverEvent: genericHover,
+    mouseOutEvent: genericMouseOut
+  },
+  'pie-chart': {
+    clickEvent: genericClick,
+    hoverEvent: genericHover,
+    mouseOutEvent: genericMouseOut
+  },
+  'histogram': {
+    clickEvent: genericClick,
+    hoverEvent: genericHover,
+    mouseOutEvent: genericMouseOut
+  },
+  'scatter-plot': {
+    clickEvent: genericClick,
+    hoverEvent: genericHover,
+    mouseOutEvent: genericMouseOut
+  },
   'heat-map': {
     clickEvent: heatClick,
+    hoverEvent: genericHover,
+    mouseOutEvent: genericMouseOut
+  },
+  'alluvial-diagram': {
+    clickEvent: genericClick,
     hoverEvent: genericHover,
     mouseOutEvent: genericMouseOut
   },
 }
 
 const chartConstructor = (chartTag, id) => {
-  console.group(chartTag);
+  // console.group(chartTag);
   let chart = document.getElementById(id);
   if (!chart) {
-    console.log('chartTag', chartTag);
+    // console.log('chartTag', chartTag);
     chart = document.createElement(chartTypes[chartTag].chartType || chartTag);
   }
   // chart.classList.add('hidden')
   // chart.classList.add('environment')
   Object.keys(chartTypes[chartTag]).forEach(prop => {
-    console.log('prop', prop);
+    // console.log('prop', prop);
     let propToTransfer = chartTypes[chartTag][prop]
     if (chartTypes[chartTag][prop][0] && chartTypes[chartTag][prop][0].date) {
       propToTransfer = []
@@ -98,7 +138,7 @@ const chartConstructor = (chartTag, id) => {
     });
   }
 
-  console.groupEnd();
+  // console.groupEnd();
 
   return chart;
 };
@@ -114,7 +154,7 @@ const swapCharts = e => {
 };
 
 const toggleSRText = e => {
-  console.log(e.target.checked)
+  // console.log(e.target.checked)
   document.getElementById("flexible-style").innerHTML = e.target.checked ? styleInnerHTML : ''
 }
 

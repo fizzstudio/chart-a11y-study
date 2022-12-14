@@ -1,115 +1,81 @@
 const alluvialProps = {
+  uniqueID: "alluvial-diagram",
+  selectionLabel: "Seventh Chart",
 	accessibility: {
+    elementDescriptionAccessor: 'Note',
+    elementsAreInterface: true,
 		"includeDataKeyNames": true,
 		"contextExplanation": "This example of an alluvial diagram was selected through example list on the sidebar.",
 		"purpose": "Alluvial diagram showing value mapping between Region and Ranking.",
 		"structureNotes": "Links are defined to visually map data values between Regions and Rankings.",
-		"elementsAreInterface": false,
 		"disableValidation": true
 	},
 	mainTitle: "Region to rank mapping",
 	linkData: [
 		{
-			"source": "Region 1",
-			"target": "High",
-			"value": 50
-		},
-		{
-			"source": "Region 1",
-			"target": "Medium",
+			"source": "English",
+			"target": "Poetry",
 			"value": 100
 		},
 		{
-			"source": "Region 1",
-			"target": "Low",
-			"value": 500
-		},
-		{
-			"source": "Region 2",
-			"target": "High",
-			"value": 100
-		},
-		{
-			"source": "Region 2",
-			"target": "Medium",
-			"value": 400
-		},
-		{
-			"source": "Region 2",
-			"target": "Low",
+			"source": "English",
+			"target": "Technical Writing",
 			"value": 50
 		},
 		{
-			"source": "Region 3",
-			"target": "High",
-			"value": 100
+			"source": "English",
+			"target": "Creative Writing",
+			"value": 220
 		},
 		{
-			"source": "Region 3",
-			"target": "Medium",
-			"value": 500
+			"source": "Science",
+			"target": "Chemistry",
+			"value": 80
 		},
 		{
-			"source": "Region 3",
-			"target": "Low",
+			"source": "Science",
+			"target": "Biology",
+			"value": 110
+		},
+		{
+			"source": "Science",
+			"target": "Physics",
 			"value": 50
 		},
 		{
-			"source": "Region 4",
-			"target": "High",
-			"value": 3148
+			"source": "Science",
+			"target": "Technical Writing",
+			"value": 70
 		},
-		{
-			"source": "Region 4",
-			"target": "Medium",
-			"value": 7279
-		},
-		{
-			"source": "Region 4",
-			"target": "Low",
-			"value": 3684
-		},
-		{
-			"source": "Region 5",
-			"target": "High",
-			"value": 3148
-		},
-		{
-			"source": "Region 5",
-			"target": "Medium",
-			"value": 7279
-		},
-		{
-			"source": "Region 5",
-			"target": "Low",
-			"value": 3684
-		}
 	],
 	nodeData: [
 		{
-			"id": "Region 1"
+			"id": "English"
 		},
 		{
-			"id": "Region 2"
+			"id": "Science"
 		},
 		{
-			"id": "Region 3"
+			"id": "Creative Writing"
 		},
 		{
-			"id": "Region 4"
+			"id": "Poetry"
 		},
 		{
-			"id": "Region 5"
+			"id": "Technical Writing"
 		},
 		{
-			"id": "High"
+			"id": "Physics"
 		},
-		{
-			"id": "Medium"
+    {
+			"id": "Chemistry"
 		},
-		{
-			"id": "Low"
-		}
+    {
+			"id": "Biology"
+		},
+
+
+
 	],
 	sourceAccessor: "source",
 	targetAccessor: "target",
@@ -149,6 +115,4 @@ const alluvialProps = {
 		"#717171",
 		"#717171"
 	],
-	uniqueID: "alluvial-diagram",
-  selectionLabel: "Seventh Chart",
 }
