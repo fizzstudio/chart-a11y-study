@@ -13,26 +13,26 @@
     <header>
       <nav>
         <h2>Environments</h2>
-        <p>Load chart once ready to evaluate:</p>
+        <p>Please read the instructions first, then load the first chart once you are ready to evaluate:</p>
         <div id="inputs"></div>
       </nav>
     </header>
     <main>
       <h1>Fizz Studio: Assessing Chart Accessibility</h1>
       <p>
-        This small test environment is intended to be used to help evaluate access barriers in online, interactive
+        This test environment is intended to be used to help evaluate access barriers in online, interactive
         charts and graphs. We are evaluating a series of interactive charts and graphs with various assistive
         technologies and native users.
       </p>
       <p>
         These environments are set up so that participants can help us evaluate the usability of these charts and
-        graphs, they are not intended to test the individual abilities of our participants.
+        graphs. They are not intended to test the individual abilities of our participants.
       </p>
       <p>
         The following section is where our test chart will render. These tests may be changed by choosing an option in
         the previous Environments nav menu.
       </p>
-      <p>When we are ready to begin evaluating, please select First Chart in the previous Environments menu.</p>
+      <p>When we are ready to begin evaluating, please select First Chart in the previous Environments menu. Then read the tasks, familiarize yourself with the chart, and perform the tasks.</p>
 
       <section id="render-location">
         <div id="bar-chart-group" class="hidden environment">
@@ -51,7 +51,7 @@
           <div class="environment-instructions">
             <h2>Tasks:</h2>
             <ol>
-              <li>What is the highest value in both lines?</li>
+              <li>Of both lines, which has the highest value, and what is that value?</li>
               <li>What is the trend of each line?</li>
               <li>At what month did one line overtake the other?</li>
             </ol>
@@ -63,9 +63,9 @@
           <div class="environment-instructions">
             <h2>Tasks:</h2>
             <ol>
-              <li>What type of chart is this? What does it show?</li>
               <li>What is the company with the lowest value?</li>
-              <li>What is the total market share in dollars of all companies based in Mexico?</li>
+              <li>What is the total market share percentage of all companies based in Mexico?</li>
+              <li>What is the total market share in dollars of all companies based in the US?</li>
             </ol>
           </div>
           <div id="pie-chart-container" class="insert"></div>
@@ -104,9 +104,13 @@ TODO: let users select multiple data points and get statistical details, like to
           <div class="environment-instructions">
             <h2>Tasks:</h2>
             <ol>
-              <li>What type of chart is this? What does it show?</li>
               <li>How many absences did the student with the highest GPA have?</li>
-              <li>Is there a positive or negative correlation between the number of absences of a student and their GPA?</li>
+              <li>Does this chart show an increasing trend, a decreasing trend, or no clear trend?</li>
+              <li>Is there a positive or negative correlation between the number of absences of a student and their GPA?
+                <ul>
+                  <li>Note: a positive correlation would show a higher GPA for students with more absences, and a negative correlation would show a lower GPA for students with more absences.</li>
+                </ul>
+              </li>
             </ol>
           </div>
           <div id="scatter-plot-container" class="insert"></div>
@@ -116,9 +120,13 @@ TODO: let users select multiple data points and get statistical details, like to
           <div class="environment-instructions">
             <h2>Tasks:</h2>
             <ol>
-              <li>What kind of chart is this?</li>
-              <li>How many regions are there, and how many cells in each region?</li>
-              <li>Select the cell with the highest value. What are the details of this cell?</li>
+              <li>How many regions are there, and how many cells are in each region?</li>
+              <li>Select the cell with the highest value. 
+                <ul>
+                  <li>What are the details of this cell?</li>
+                </ul>
+              </li>
+              <li>Which regions has the lowest overall approval?</li>
             </ol>
           </div>
           <div id="heat-map-container" class="insert"></div>
@@ -137,9 +145,8 @@ TODO: let users select multiple data points and get statistical details, like to
         </div>
       </section>
 
-      <div class="announcement">
-        <h3>Data Output Area</h3>
-        <p>When a selection has been made in the chart, it will be recorded here:</p>
+      <div id="announcement" class="hidden">
+        <h3 id="data_selection">Data Selection</h3>
         <span id="aria-live" aria-live="assertive" aria-atomic="true"></span>
       </div>
 

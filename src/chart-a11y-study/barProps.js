@@ -9,8 +9,7 @@ const barProps = {
     disableValidation: true
   },
   mainTitle: `Products in all Regions, 2020`,
-  subTitle:
-    'This chart shows all products sales across every region. Values are in millions of dollars.',
+  subTitle: 'This bar chart shows all products sales across every region. Values are in millions of dollars.',
   data: [
     { Product: 'Chairs', Region: 'West', Value: 8 },
     { Product: 'Notepads', Region: 'South', Value: 16 },

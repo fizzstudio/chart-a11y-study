@@ -8,7 +8,7 @@ const lineProps = {
     disableValidation: true
   },
   mainTitle: 'Sales in Related Peer Products "Chairs" and "Tables"',
-  subTitle: `This is a chart demonstrating the sales patterns of two different products (which have been anonymized) over the year 2021.`,
+  subTitle: `This is a line chart demonstrating the sales patterns of two different products over the year 2021.`,
   data: [
     { Date: 'Jan', Line: 'Chairs', Value: 10, Note: 'Lowest Value. Click space for trend information.', Memo: 'This line has a generally upward trend.' },
     { Date: 'Feb', Line: 'Chairs', Value: 15 },
