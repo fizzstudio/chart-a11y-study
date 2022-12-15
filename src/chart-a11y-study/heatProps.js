@@ -20,7 +20,7 @@ const heatProps = {
     { Product: 'Pens', 'User group': 'Midwest', Value: -0.45, Note: 'Low approval correlation' },
     { Product: 'Chairs', 'User group': 'Northeast', Value: 0.23, Note: 'Medium approval correlation' },
     { Product: 'Tables', 'User group': 'Northeast', Value: -0.25, Note: 'Low approval correlation' },
-    { Product: 'Notepads', 'User group': 'Northeast', Value: 0.97, Note: 'High approval correlation' },
+    { Product: 'Notepads', 'User group': 'Northeast', Value: 0.97, Note: 'Highest value. High approval correlation.' },
     { Product: 'Pens', 'User group': 'Northeast', Value: -0.76, Note: 'Very low approval correlation' },
     { Product: 'Chairs', 'User group': 'South', Value: -0.9, Note: 'Lowest approval correlation' },
     { Product: 'Tables', 'User group': 'South', Value: -0.52, Note: 'Low approval correlation' },

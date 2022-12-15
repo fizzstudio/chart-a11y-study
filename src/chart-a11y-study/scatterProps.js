@@ -166,7 +166,7 @@ const scatterProps = {
 			"Grade Point Average"
 		],
 		"format": [
-			"0,0.0[a]",
+			"0,0.[0][a]",
 			"0.0[0][a]"
 		]
 	},
