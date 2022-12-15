@@ -2,6 +2,8 @@ const histogramProps = {
   chartType: 'bar-chart',
   uniqueID: "histogram",
   selectionLabel: "Fourth Chart",
+  mainTitle: "Histogram showing heights of 30 people",
+	subTitle: "The heights of 30 people, in centimeters",
 	accessibility: {
     elementDescriptionAccessor: 'Note',
     elementsAreInterface: true,
@@ -23,8 +25,6 @@ const histogramProps = {
 		"label": "",
 		"format": ""
 	},
-	mainTitle: "Heights of 30 people",
-	subTitle: ".",
 	data: [
 		{
 			"height": "139.5 to 149.5",

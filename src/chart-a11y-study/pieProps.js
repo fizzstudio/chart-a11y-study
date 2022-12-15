@@ -11,36 +11,45 @@ const pieProps = {
 		"statisticalNotes": "This chart is using dummy data. The spread of share is relatively even across the groups.",
 		"disableValidation": true
 	},
+	mainTitle: "Company share of market",
+  subTitle: `A pie chart showing market share of several companies from different North American companies.`,
 	centerTitle: "Share",
 	centerSubTitle: "of Market",
-	mainTitle: "Company share of market",
 	data: [
 		{
 			"label": "Company A",
-			"value": 43000,
-			"location": "US"
-		},
-		{
-			"label": "Company C",
-			"value": 32000,
-			"location": "Mexico"
-		},
-		{
-			"label": "Company D",
-			"value": 25000,
+			"value": 35000,
 			"location": "US",
-      "Note": "Lowest value."
+      "Note": "Click for country details.",
+      "Memo": "Total percentage for all US companies is 45.4%. Total revenue for all US companies is $70,000."
 		},
 		{
 			"label": "Company B",
-			"value": 52000,
-			"location": "Canada",
-      "Note": "Highest value."
+			"value": 32000,
+			"location": "Mexico",
+      "Note": "Click for country details.",
+      "Memo": "Total percentage for all Mexican companies is 20.8%. Total revenue for all Mexican companies is $32,000."
 		},
 		{
-			"label": "Company E",
-			"value": 31000,
-			"location": "US"
+			"label": "Company C",
+			"value": 15000,
+			"location": "US",
+      "Note": "Lowest value. Click for country details.",
+      "Memo": "Total percentage for all US companies is 45.4%. Total revenue for all US companies is $70,000."
+		},
+		{
+      "label": "Company D",
+			"value": 52000,
+			"location": "Canada",
+      "Note": "Highest value. Click for country details.",
+      "Memo": "Total percentage for all Canadian companies is 33.8%. Total revenue for all Canadian companies is $52,000."
+		},
+		{
+      "label": "Company E",
+			"value": 20000,
+			"location": "US",
+      "Note": "Click for country details.",
+      "Memo": "Total percentage for all US companies is 45.4%. Total revenue for all US companies is $70,000."
 		}
 	],
 	dataLabel: {

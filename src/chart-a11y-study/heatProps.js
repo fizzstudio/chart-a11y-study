@@ -8,8 +8,7 @@ const heatProps = {
     elementsAreInterface: true
   },
   mainTitle: 'Comparing how user groups correlate to approval rates of product types',
-  subTitle: 
-    'A high correlation value (close to 1) indicates that these users have a high approval rate of that product. A low correlation value (close to -1) indicates a negative approval rate of those products.',
+  subTitle: 'A heat map showing correlation between products and user approval. A high correlation value (close to 1) indicates that these users have a high approval rate of that product. A low correlation value (close to -1) indicates a negative approval rate of those products.',
   data: [
     { Product: 'Chairs', 'User group': 'Northwest', Value: 0.74, Note: 'High approval correlation' },
     { Product: 'Tables', 'User group': 'Northwest', Value: 0.43, Note: 'Medium approval correlation' },
@@ -43,5 +42,10 @@ const heatProps = {
     labelTitle: ['Product', 'User group', 'Value'],
     format: ''
   },
+  dataLabel: {
+		"visible": true,
+		"placement": "auto",
+		"format": "0.0[0][a]"
+	},
   clickStyle: { strokeWidth: '3px' },
 }

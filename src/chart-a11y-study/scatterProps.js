@@ -10,6 +10,8 @@ const scatterProps = {
 		"statisticalNotes": "There is a descending trend, with the highest GPAs having the least absences and the lowest GPAs having the most absences.",
 		"disableValidation": true
 	},
+  mainTitle: "Student Grade Point Average by Number of Absences",
+	subTitle: "Scatter plot showing a comparison of Number of Absences and Grade Point Average.",
 	xAxis: {
 		"visible": true,
 		"gridVisible": false,
@@ -20,10 +22,8 @@ const scatterProps = {
 		"visible": true,
 		"gridVisible": true,
 		"label": "Grade Point Average",
-		"format": "0.[0][a]"
+		"format": "0.0[a]"
 	},
-	mainTitle: "Student Grade Point Average by Number of Absences",
-	subTitle: "Comparison of Number of Absences and Grade Point Average at the item level.",
 	data: [
 		{
 			"Grade Point Average": 2.8,
@@ -167,13 +167,13 @@ const scatterProps = {
 		],
 		"format": [
 			"0,0.0[a]",
-			"0[a]"
+			"0.0[0][a]"
 		]
 	},
 	dataLabel: {
 		"visible": false,
 		"placement": "auto",
-		"format": "$0.0a"
+		"format": "0.0[0][a]"
 	},
 	legend: {
 		"visible": false

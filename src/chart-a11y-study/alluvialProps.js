@@ -10,7 +10,8 @@ const alluvialProps = {
 		"structureNotes": "Links are defined to visually map data values between Regions and Rankings.",
 		"disableValidation": true
 	},
-	mainTitle: "Region to rank mapping",
+	mainTitle: "Introductory and advanced class enrollment",
+  subTitle: "This alluvial flow chart shows how many students were enrolled in introductory classes, and which advanced course they enrolled in.",
 	linkData: [
 		{
 			"source": "English",
@@ -20,12 +21,14 @@ const alluvialProps = {
 		{
 			"source": "English",
 			"target": "Technical Writing",
-			"value": 50
+			"value": 50,
+      "Note": "Lowest value"
 		},
 		{
 			"source": "English",
 			"target": "Creative Writing",
-			"value": 220
+			"value": 220,
+      "Note": "Highest value"
 		},
 		{
 			"source": "Science",
@@ -40,12 +43,13 @@ const alluvialProps = {
 		{
 			"source": "Science",
 			"target": "Physics",
-			"value": 50
+			"value": 50,
+      "Note": "Lowest value"
 		},
 		{
 			"source": "Science",
 			"target": "Technical Writing",
-			"value": 70
+			"value": 57
 		},
 	],
 	nodeData: [

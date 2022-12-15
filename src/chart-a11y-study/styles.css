@@ -67,3 +67,30 @@
 clustered-bar-chart .annotations {
   pointer-events: none;
 }
+
+#announcement {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  gap: 1rem;
+}
+
+#announcement.hidden {
+  opacity: 0;
+}
+
+#data_selection {
+  display: inline;
+  color: hsl(0, 12%, 97%);
+  background-color: hsl(0, 1%, 23%);
+  padding: 5px;
+}
+
+  /* #data_selection::after {
+    content: ':';
+  } */
+
+#aria-live {
+  font-size: 1.25rem;
+}

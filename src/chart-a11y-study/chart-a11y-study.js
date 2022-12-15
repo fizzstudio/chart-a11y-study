@@ -30,14 +30,15 @@ const heatClick = event => {
 };
 
 const genericClick = event => {
-  document.getElementById('aria-live').textContent = ' ';
+  const ariaLiveOutput = document.getElementById('aria-live');
+  ariaLiveOutput.textContent = ' ';
 
   const dataDetail = event.detail.data;
   console.log(dataDetail);
   const memo = dataDetail.Memo;
   if (memo) {
     setTimeout(() => {
-      document.getElementById('aria-live').textContent = memo;
+      ariaLiveOutput.textContent = memo;
     }, 300);
   }
 
@@ -143,8 +144,15 @@ const chartConstructor = (chartTag, id) => {
   return chart;
 };
 
-const swapCharts = e => {
-  const chartType = e.target.id.substr(1);
+const swapCharts = event => {
+  const announcement = document.getElementById('announcement');
+  if (announcement) {
+    announcement.classList.remove('hidden');
+  }
+
+  document.getElementById('aria-live').textContent = ' ';
+
+  const chartType = event.target.id.substr(1);
   document.getElementById('render-location').querySelectorAll('.environment').forEach(env => {
     // console.log('env', env);
     env.classList.add('hidden')
