@@ -20,35 +20,35 @@ const pieProps = {
 			"label": "Company A",
 			"value": 35000,
 			"location": "US",
-      "Note": "Click for country details.",
+      "Note": "Click space for details on this country.",
       "Memo": "Total percentage for all US companies is 45.4%. Total revenue for all US companies is $70,000."
 		},
 		{
 			"label": "Company B",
 			"value": 32000,
 			"location": "Mexico",
-      "Note": "Click for country details.",
+      "Note": "Click space for details on this country.",
       "Memo": "Total percentage for all Mexican companies is 20.8%. Total revenue for all Mexican companies is $32,000."
 		},
 		{
 			"label": "Company C",
 			"value": 15000,
 			"location": "US",
-      "Note": "Lowest value. Click for country details.",
+      "Note": "Lowest value. Click space for details on this country.",
       "Memo": "Total percentage for all US companies is 45.4%. Total revenue for all US companies is $70,000."
 		},
 		{
       "label": "Company D",
 			"value": 52000,
 			"location": "Canada",
-      "Note": "Highest value. Click for country details.",
+      "Note": "Highest value. Click space for details on this country.",
       "Memo": "Total percentage for all Canadian companies is 33.8%. Total revenue for all Canadian companies is $52,000."
 		},
 		{
       "label": "Company E",
 			"value": 20000,
 			"location": "US",
-      "Note": "Click for country details.",
+      "Note": "Click space for details on this country.",
       "Memo": "Total percentage for all US companies is 45.4%. Total revenue for all US companies is $70,000."
 		}
 	],
