@@ -20,33 +20,92 @@ const sparklineFix = (d) => {
 }
 
 const heatClick = event => {
+  const dataDetail = event.detail.data;
+  // console.log(dataDetail);
+
+  // Product: "Notepads", "User group": "Northeast", Value: 0.97
+  let message = null;
+
   event.target.clickHighlight =
-    event.target.clickHighlight && event.target.clickHighlight[0] === event.detail.data ? [] : [event.detail.data];
-  document.getElementById('aria-live').innerHTML = !event.target.clickHighlight.length
-    ? 'Selected data has been removed.'
-    : event.detail.data.Value > 0.95
-      ? 'Highest approval correlation has been selected.'
-      : `${event.detail.data.Note} has been selected.`;
+    event.target.clickHighlight && event.target.clickHighlight[0] === dataDetail ? [] : [dataDetail];
+
+  if (!event.target.clickHighlight.length) {
+    message = 'Selected data has been removed.';
+  } else {
+    if (event.detail.data.Value > 0.95) {
+      message = 'Highest approval correlation has been selected. '
+      message += `Product: ${dataDetail.Product}. User group: ${dataDetail['User group']}. Value: ${dataDetail.Value}. `
+    } else {
+      message = `${dataDetail.Note} has been selected.`;
+    }
+  }
+
+  sendMessage(message);
+};
+
+
+let activeItemDetails = null;
+const selectItem = event => {
+  // console.log('selectItem');
+  let message = null;
+
+  const dataDetail = event.detail.data;
+  // console.log(dataDetail);
+  if (!activeItemDetails) {
+    activeItemDetails = dataDetail;
+    message = `Selected Product ${dataDetail.Product}, Region ${dataDetail.Region}.`
+  } else {
+    // console.log('activeItemDetails', activeItemDetails); 
+    // console.log('dataDetail', dataDetail); 
+    message = `Selected Product ${dataDetail.Product}, Region ${dataDetail.Region}. `
+    message += `Comparison with Product ${activeItemDetails.Product}, Region ${activeItemDetails.Region}: `
+    message += `Sum of values is ${activeItemDetails.Value + dataDetail.Value}. `
+    message += `Difference of values is ${activeItemDetails.Value - dataDetail.Value}. `
+
+    activeItemDetails = dataDetail;
+  }
+
+  sendMessage(message);
+};
+
+
+const selectHistogram = event => {
+  // console.log('selectItem');
+  let message = null;
+
+  const dataDetail = event.detail.data;
+  // console.log(dataDetail);
+  if (!activeItemDetails) {
+    activeItemDetails = dataDetail;
+    message = `Selected Product ${dataDetail.height}.`
+  } else {
+    // console.log('activeItemDetails', activeItemDetails); 
+    // console.log('dataDetail', dataDetail); 
+    message = `Selected Product ${dataDetail.height}. `
+    message += `Comparison with Product ${activeItemDetails.height}: `
+    message += `Sum of values is ${activeItemDetails.value + dataDetail.value}. `
+    message += `Difference of values is ${activeItemDetails.value - dataDetail.value}. `
+
+    activeItemDetails = dataDetail;
+  }
+
+  sendMessage(message);
 };
 
 const genericClick = event => {
-  const ariaLiveOutput = document.getElementById('aria-live');
-  ariaLiveOutput.textContent = ' ';
-
+  // console.log('genericClick');
   const dataDetail = event.detail.data;
-  console.log(dataDetail);
+  // console.log(dataDetail);
   const memo = dataDetail.Memo;
-  if (memo) {
-    setTimeout(() => {
-      ariaLiveOutput.textContent = memo;
-    }, 300);
-  }
+
+  sendMessage(memo);
+
 
   // const clickArray = [...(event.target.clickHighlight || [])]
   // const i = clickArray.indexOf(event.detail.data)
   // if (i < 0) {
   //   clickArray.push(event.detail.data);
-  //   console.log('genericClick', event.detail.data);
+  //   // console.log('genericClick', event.detail.data);
   // } else {
   //   clickArray.splice(i, 1)
   // }
@@ -62,6 +121,20 @@ const genericMouseOut = event => {
   event.target.hoverHighlight = '';
 };
 
+
+
+const ariaLiveOutput = document.getElementById('aria-live');
+function sendMessage (message) {
+  ariaLiveOutput.textContent = ' ';
+
+  if (message) {
+    setTimeout(() => {
+      ariaLiveOutput.textContent = message;
+    }, 300);
+  }
+}
+
+
 const chartTypes = {
   'bar-chart': barProps,
   'line-chart': lineProps,
@@ -74,7 +147,8 @@ const chartTypes = {
 
 const events = {
   'bar-chart': {
-    clickEvent: genericClick,
+    // clickEvent: genericClick,
+    clickEvent: selectItem,
     hoverEvent: genericHover,
     mouseOutEvent: genericMouseOut
   },
@@ -89,7 +163,8 @@ const events = {
     mouseOutEvent: genericMouseOut
   },
   'histogram': {
-    clickEvent: genericClick,
+    // clickEvent: genericClick,
+    clickEvent: selectHistogram,
     hoverEvent: genericHover,
     mouseOutEvent: genericMouseOut
   },
@@ -151,6 +226,7 @@ const swapCharts = event => {
   }
 
   document.getElementById('aria-live').textContent = ' ';
+  activeItemDetails = null;
 
   const chartType = event.target.id.substr(1);
   document.getElementById('render-location').querySelectorAll('.environment').forEach(env => {

@@ -10,46 +10,42 @@ const alluvialProps = {
 		"structureNotes": "Links are defined to visually map data values between Regions and Rankings.",
 		"disableValidation": true
 	},
-	mainTitle: "Introductory and advanced class enrollment",
-  subTitle: "This alluvial flow chart shows how many students were enrolled in introductory classes, and which advanced course they enrolled in.",
+	mainTitle: "Region to rank mapping",
 	linkData: [
 		{
-			"source": "English",
-			"target": "Poetry",
+			"intro course": "English",
+			"advanced course": "Poetry",
 			"value": 100
 		},
 		{
-			"source": "English",
-			"target": "Technical Writing",
-			"value": 50,
-      "Note": "Lowest value"
+			"intro course": "English",
+			"advanced course": "Technical Writing",
+			"value": 50
 		},
 		{
-			"source": "English",
-			"target": "Creative Writing",
-			"value": 220,
-      "Note": "Highest value"
+			"intro course": "English",
+			"advanced course": "Creative Writing",
+			"value": 220
 		},
 		{
-			"source": "Science",
-			"target": "Chemistry",
+			"intro course": "Science",
+			"advanced course": "Chemistry",
 			"value": 80
 		},
 		{
-			"source": "Science",
-			"target": "Biology",
+			"intro course": "Science",
+			"advanced course": "Biology",
 			"value": 110
 		},
 		{
-			"source": "Science",
-			"target": "Physics",
-			"value": 50,
-      "Note": "Lowest value"
+			"intro course": "Science",
+			"advanced course": "Physics",
+			"value": 50
 		},
 		{
-			"source": "Science",
-			"target": "Technical Writing",
-			"value": 57
+			"intro course": "Science",
+			"advanced course": "Technical Writing",
+			"value": 70
 		},
 	],
 	nodeData: [
@@ -77,12 +73,9 @@ const alluvialProps = {
     {
 			"id": "Biology"
 		},
-
-
-
 	],
-	sourceAccessor: "source",
-	targetAccessor: "target",
+	sourceAccessor: "intro course",
+	targetAccessor: "advanced course",
 	valueAccessor: "value",
 	nodeIDAccessor: "id",
 	dataLabel: {
